@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "anotherServlet", urlPatterns = {"/another"}, loadOnStartup = 2)
+@WebServlet(name = "anotherServlet", urlPatterns = {"/another"}, loadOnStartup = 1)
 public class AnotherServlet extends HttpServlet {
 
     @Override
@@ -27,7 +27,7 @@ public class AnotherServlet extends HttpServlet {
 
         out.println(
                 "<html>\n" +
-                        "<head><title>Another page</title></head>\n" +
+                        "<head><title>Another page " + linkId +"</title></head>\n" +
                         "<body>\n" +
                         "<h1>Hello CodeCooler!</h1>" +
                         (linkId == null ?
@@ -38,4 +38,6 @@ public class AnotherServlet extends HttpServlet {
                         "</body></html>"
         );
     }
+
+
 }
