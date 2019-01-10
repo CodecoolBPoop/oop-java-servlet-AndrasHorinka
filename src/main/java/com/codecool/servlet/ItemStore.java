@@ -14,4 +14,13 @@ public class ItemStore {
     public void removeItem(Item item) {
         this.items.remove(item);
     }
+
+    public Item getItemById(int id) {
+        for (Item item : this.items) {
+            if (item.getId() == id) {
+                return item;
+            }
+        }
+        return null;
+    }
 }
